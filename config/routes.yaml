@@ -1,3 +1,8 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# En gros, quand un utilisateur arrive sur la page d'accueil, symfony appelle mon ArticleController avec la métyhode homepage
+# Ca s'appelle route hehe
+
+
+
+index:
+   path: /
+   controller: App\Controller\ArticleController::homepage
