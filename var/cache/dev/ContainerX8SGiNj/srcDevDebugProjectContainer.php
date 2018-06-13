@@ -1,6 +1,6 @@
 <?php
 
-namespace Container6UeDWE0;
+namespace ContainerX8SGiNj;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -49,6 +49,7 @@ class srcDevDebugProjectContainer extends Container
             'router' => 'getRouterService',
         );
         $this->fileMap = array(
+            'App\\Controller\\ArticleController' => 'getArticleControllerService.php',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController' => 'getRedirectControllerService.php',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController' => 'getTemplateControllerService.php',
             'cache.app' => 'getCache_AppService.php',
@@ -395,6 +396,10 @@ class srcDevDebugProjectContainer extends Container
                     'path' => ($this->targetDirs[3].'/vendor/symfony/framework-bundle'),
                     'namespace' => 'Symfony\\Bundle\\FrameworkBundle',
                 ),
+                'WebServerBundle' => array(
+                    'path' => ($this->targetDirs[3].'/vendor/symfony/web-server-bundle'),
+                    'namespace' => 'Symfony\\Bundle\\WebServerBundle',
+                ),
             ); break;
             case 'kernel.secret': $value = $this->getEnv('APP_SECRET'); break;
             case 'session.save_path': $value = ($this->targetDirs[0].'/sessions'); break;
@@ -419,6 +424,7 @@ class srcDevDebugProjectContainer extends Container
             'kernel.name' => 'src',
             'kernel.bundles' => array(
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
+                'WebServerBundle' => 'Symfony\\Bundle\\WebServerBundle\\WebServerBundle',
             ),
             'kernel.charset' => 'UTF-8',
             'kernel.container_class' => 'srcDevDebugProjectContainer',
