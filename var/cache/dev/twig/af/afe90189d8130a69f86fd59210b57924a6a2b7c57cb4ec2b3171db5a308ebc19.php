@@ -35,25 +35,32 @@ class __TwigTemplate_76b9556502e830b3cd3047fa2d6af6f29c0c3ecda2e20b6285ad3218c45
 
     }
 
+    // line 4
     public function block_title($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 1, $this->source); })()), "html", null, true);
+        echo "   ";
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 4, $this->source); })()), "html", null, true);
+        echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
+    // line 7
     public function block_body($context, array $blocks = array())
     {
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 2
-        echo "<h1>";
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 2, $this->source); })()), "html", null, true);
+        // line 8
+        echo "
+
+<h1>";
+        // line 10
+        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 10, $this->source); })()), "html", null, true);
         echo "</h1>
 
 <div>
@@ -76,18 +83,19 @@ class __TwigTemplate_76b9556502e830b3cd3047fa2d6af6f29c0c3ecda2e20b6285ad3218c45
     </p>
 
 </div>
+
 <h2> Comments (";
-        // line 24
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 24, $this->source); })())), "html", null, true);
-        echo ") </h2>
+        // line 33
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 33, $this->source); })())), "html", null, true);
+        echo ") </h2> <!-- Ca vas print le nombre de commentaires, woohoo! !-->
 
 <ul>
     ";
-        // line 27
+        // line 36
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 27, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 36, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-            // line 28
+            // line 37
             echo "        <li>";
             echo twig_escape_filter($this->env, $context["comment"], "html", null, true);
             echo "</li>
@@ -96,7 +104,7 @@ class __TwigTemplate_76b9556502e830b3cd3047fa2d6af6f29c0c3ecda2e20b6285ad3218c45
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 39
         echo "</ul>
 
 ";
@@ -117,12 +125,20 @@ class __TwigTemplate_76b9556502e830b3cd3047fa2d6af6f29c0c3ecda2e20b6285ad3218c45
 
     public function getDebugInfo()
     {
-        return array (  100 => 30,  91 => 28,  87 => 27,  81 => 24,  55 => 2,  15 => 1,);
+        return array (  108 => 39,  99 => 37,  95 => 36,  89 => 33,  63 => 10,  59 => 8,  53 => 7,  39 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %} {% block title %}{{ title }}{% endblock %} {% block body %}
+        return new Twig_Source("{% extends 'base.html.twig' %} 
+
+
+{% block title %}   {{ title }}    {% endblock %} 
+
+
+{% block body %}
+
+
 <h1>{{ title }}</h1>
 
 <div>
@@ -145,7 +161,8 @@ class __TwigTemplate_76b9556502e830b3cd3047fa2d6af6f29c0c3ecda2e20b6285ad3218c45
     </p>
 
 </div>
-<h2> Comments ({{ comments|length}}) </h2>
+
+<h2> Comments ({{ comments|length}}) </h2> <!-- Ca vas print le nombre de commentaires, woohoo! !-->
 
 <ul>
     {% for comment in comments %}

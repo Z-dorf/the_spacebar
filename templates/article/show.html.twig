@@ -1,4 +1,12 @@
-{% extends 'base.html.twig' %} {% block title %}{{ title }}{% endblock %} {% block body %}
+{% extends 'base.html.twig' %} 
+
+
+{% block title %}   {{ title }}    {% endblock %} 
+
+
+{% block body %}
+
+
 <h1>{{ title }}</h1>
 
 <div>
@@ -21,6 +29,7 @@
     </p>
 
 </div>
+
 <h2> Comments ({{ comments|length}}) </h2> <!-- Ca vas print le nombre de commentaires, woohoo! !-->
 
 <ul>
