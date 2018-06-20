@@ -20,7 +20,8 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
-        'index' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::homepage'), array(), array(array('text', '/')), array(), array()),
+        'app_article_homepage' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::homepage'), array(), array(array('text', '/')), array(), array()),
+        'app_article_show' => array(array('smash'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'smash'), array('text', '/news')), array(), array()),
     );
         }
     }

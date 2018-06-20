@@ -47,6 +47,10 @@ class ComposerStaticInit8dd15ec8d92dbd5bb478ca2f01a6a0b4
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
         ),
+        'C' => 
+        array (
+            'Composer\\CaBundle\\' => 18,
+        ),
         'A' => 
         array (
             'App\\Tests\\' => 10,
@@ -163,6 +167,10 @@ class ComposerStaticInit8dd15ec8d92dbd5bb478ca2f01a6a0b4
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
         ),
+        'Composer\\CaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
         'App\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -174,6 +182,13 @@ class ComposerStaticInit8dd15ec8d92dbd5bb478ca2f01a6a0b4
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'SensioLabs\\Security' => 
+            array (
+                0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Lexer\\' => 
