@@ -1,6 +1,6 @@
 <?php
 
-namespace Container4EgRYha;
+namespace ContainerGa1J6bn;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -47,6 +47,7 @@ class srcDevDebugProjectContainer extends Container
             'http_kernel' => 'getHttpKernelService',
             'request_stack' => 'getRequestStackService',
             'router' => 'getRouterService',
+            'twig' => 'getTwigService',
         );
         $this->fileMap = array(
             'App\\Controller\\ArticleController' => 'getArticleControllerService.php',
@@ -63,6 +64,8 @@ class srcDevDebugProjectContainer extends Container
             'filesystem' => 'getFilesystemService.php',
             'routing.loader' => 'getRouting_LoaderService.php',
             'session' => 'getSessionService.php',
+            'twig.controller.exception' => 'getTwig_Controller_ExceptionService.php',
+            'twig.controller.preview_error' => 'getTwig_Controller_PreviewErrorService.php',
         );
 
         $this->aliases = array();
@@ -77,6 +80,11 @@ class srcDevDebugProjectContainer extends Container
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/EventListener/LocaleListener.php';
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/EventListener/ValidateRequestListener.php';
             include_once $this->targetDirs[3].'/vendor/symfony/framework-bundle/EventListener/ResolveControllerNameSubscriber.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ParameterBagInterface.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/FrozenParameterBag.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ContainerBagInterface.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ContainerBag.php';
             include_once $this->targetDirs[3].'/vendor/symfony/event-dispatcher/EventDispatcherInterface.php';
             include_once $this->targetDirs[3].'/vendor/symfony/event-dispatcher/EventDispatcher.php';
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/Controller/ControllerResolverInterface.php';
@@ -92,8 +100,8 @@ class srcDevDebugProjectContainer extends Container
             include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ServiceLocator.php';
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/EventListener/AbstractSessionListener.php';
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/EventListener/SessionListener.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/Debug/FileLinkFormatter.php';
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/EventListener/DebugHandlersListener.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/Debug/FileLinkFormatter.php';
             include_once $this->targetDirs[3].'/vendor/symfony/routing/RequestContext.php';
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/EventListener/RouterListener.php';
             include_once $this->targetDirs[3].'/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php';
@@ -105,17 +113,35 @@ class srcDevDebugProjectContainer extends Container
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/Request/ParamConverter/DateTimeParamConverter.php';
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/Request/ParamConverter/ParamConverterManager.php';
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/EventListener/ParamConverterListener.php';
+            include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/Templating/TemplateGuesser.php';
+            include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/EventListener/TemplateListener.php';
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/EventListener/HttpCacheListener.php';
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/Request/ArgumentNameConverter.php';
             include_once $this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/EventListener/IsGrantedListener.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/LoaderInterface.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/ExistsLoaderInterface.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/SourceContextLoaderInterface.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/Loader/Filesystem.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/Profiler/Profile.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/ExtensionInterface.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/Extension.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/Extension/Profiler.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/ProfilerExtension.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/TranslationExtension.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/CodeExtension.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/RoutingExtension.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/YamlExtension.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/HttpKernelExtension.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/Extension/HttpFoundationExtension.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/Extension/Debug.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bridge/AppVariable.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/RuntimeLoaderInterface.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/ContainerRuntimeLoader.php';
+            include_once $this->targetDirs[3].'/vendor/symfony/twig-bundle/DependencyInjection/Configurator/EnvironmentConfigurator.php';
+            include_once $this->targetDirs[3].'/vendor/twig/twig/lib/Twig/Environment.php';
             include_once $this->targetDirs[3].'/vendor/psr/log/Psr/Log/LoggerInterface.php';
             include_once $this->targetDirs[3].'/vendor/psr/log/Psr/Log/AbstractLogger.php';
             include_once $this->targetDirs[3].'/vendor/symfony/http-kernel/Log/Logger.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ParameterBagInterface.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/FrozenParameterBag.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ContainerBagInterface.php';
-            include_once $this->targetDirs[3].'/vendor/symfony/dependency-injection/ParameterBag/ContainerBag.php';
             include_once $this->targetDirs[3].'/vendor/symfony/config/ConfigCacheFactoryInterface.php';
             include_once $this->targetDirs[3].'/vendor/symfony/config/ResourceCheckerConfigCacheFactory.php';
             include_once $this->targetDirs[3].'/vendor/symfony/routing/RequestContextAwareInterface.php';
@@ -202,9 +228,6 @@ class srcDevDebugProjectContainer extends Container
         $instance->addListener('kernel.request', array(0 => function () {
             return ($this->privates['debug.debug_handlers_listener'] ?? $this->getDebug_DebugHandlersListenerService());
         }, 1 => 'configure'), 2048);
-        $instance->addListener('console.command', array(0 => function () {
-            return ($this->privates['debug.debug_handlers_listener'] ?? $this->getDebug_DebugHandlersListenerService());
-        }, 1 => 'configure'), 2048);
         $instance->addListener('kernel.request', array(0 => function () {
             return ($this->privates['router_listener'] ?? $this->getRouterListenerService());
         }, 1 => 'onKernelRequest'), 32);
@@ -221,6 +244,12 @@ class srcDevDebugProjectContainer extends Container
             return ($this->privates['sensio_framework_extra.converter.listener'] ?? $this->getSensioFrameworkExtra_Converter_ListenerService());
         }, 1 => 'onKernelController'), 0);
         $instance->addListener('kernel.controller', array(0 => function () {
+            return ($this->privates['sensio_framework_extra.view.listener'] ?? $this->getSensioFrameworkExtra_View_ListenerService());
+        }, 1 => 'onKernelController'), -128);
+        $instance->addListener('kernel.view', array(0 => function () {
+            return ($this->privates['sensio_framework_extra.view.listener'] ?? $this->getSensioFrameworkExtra_View_ListenerService());
+        }, 1 => 'onKernelView'), 0);
+        $instance->addListener('kernel.controller', array(0 => function () {
             return ($this->privates['sensio_framework_extra.cache.listener'] ?? $this->privates['sensio_framework_extra.cache.listener'] = new \Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener());
         }, 1 => 'onKernelController'), 0);
         $instance->addListener('kernel.response', array(0 => function () {
@@ -229,6 +258,12 @@ class srcDevDebugProjectContainer extends Container
         $instance->addListener('kernel.controller_arguments', array(0 => function () {
             return ($this->privates['framework_extra_bundle.event.is_granted'] ?? $this->getFrameworkExtraBundle_Event_IsGrantedService());
         }, 1 => 'onKernelControllerArguments'), 0);
+        $instance->addListener('kernel.exception', array(0 => function () {
+            return ($this->privates['twig.exception_listener'] ?? $this->load('getTwig_ExceptionListenerService.php'));
+        }, 1 => 'logKernelException'), 2048);
+        $instance->addListener('kernel.exception', array(0 => function () {
+            return ($this->privates['twig.exception_listener'] ?? $this->load('getTwig_ExceptionListenerService.php'));
+        }, 1 => 'onKernelException'), -128);
 
         return $instance;
     }
@@ -269,12 +304,55 @@ class srcDevDebugProjectContainer extends Container
     {
         $this->services['router'] = $instance = new \Symfony\Bundle\FrameworkBundle\Routing\Router((new \Symfony\Component\DependencyInjection\ServiceLocator(array('routing.loader' => function (): \Symfony\Component\Config\Loader\LoaderInterface {
             return ($this->services['routing.loader'] ?? $this->load('getRouting_LoaderService.php'));
-        })))->withContext('router.default', $this), 'kernel::loadRoutes', array('cache_dir' => $this->targetDirs[0], 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'srcDevDebugProjectContainerUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'srcDevDebugProjectContainerUrlMatcher', 'strict_requirements' => true, 'resource_type' => 'service'), ($this->privates['router.request_context'] ?? $this->getRouter_RequestContextService()), new \Symfony\Component\DependencyInjection\ParameterBag\ContainerBag($this), ($this->privates['logger'] ?? $this->privates['logger'] = new \Symfony\Component\HttpKernel\Log\Logger()));
+        })))->withContext('router.default', $this), 'kernel::loadRoutes', array('cache_dir' => $this->targetDirs[0], 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'srcDevDebugProjectContainerUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'srcDevDebugProjectContainerUrlMatcher', 'strict_requirements' => true, 'resource_type' => 'service'), ($this->privates['router.request_context'] ?? $this->getRouter_RequestContextService()), ($this->privates['parameter_bag'] ?? $this->privates['parameter_bag'] = new \Symfony\Component\DependencyInjection\ParameterBag\ContainerBag($this)), ($this->privates['logger'] ?? $this->privates['logger'] = new \Symfony\Component\HttpKernel\Log\Logger()));
 
         $instance->setConfigCacheFactory(new \Symfony\Component\Config\ResourceCheckerConfigCacheFactory(new RewindableGenerator(function () {
             yield 0 => ($this->privates['dependency_injection.config.container_parameters_resource_checker'] ?? $this->privates['dependency_injection.config.container_parameters_resource_checker'] = new \Symfony\Component\DependencyInjection\Config\ContainerParametersResourceChecker($this));
             yield 1 => ($this->privates['config.resource.self_checking_resource_checker'] ?? $this->privates['config.resource.self_checking_resource_checker'] = new \Symfony\Component\Config\Resource\SelfCheckingResourceChecker());
         }, 2)));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'twig' shared service.
+     *
+     * @return \Twig\Environment
+     */
+    protected function getTwigService()
+    {
+        $a = new \Twig\Loader\FilesystemLoader(array(), $this->targetDirs[3]);
+        $a->addPath(($this->targetDirs[3].'/templates'));
+        $a->addPath(($this->targetDirs[3].'/vendor/symfony/framework-bundle/Resources/views'), 'Framework');
+        $a->addPath(($this->targetDirs[3].'/vendor/symfony/framework-bundle/Resources/views'), '!Framework');
+        $a->addPath(($this->targetDirs[3].'/vendor/symfony/twig-bundle/Resources/views'), 'Twig');
+        $a->addPath(($this->targetDirs[3].'/vendor/symfony/twig-bundle/Resources/views'), '!Twig');
+        $a->addPath(($this->targetDirs[3].'/templates'));
+
+        $this->services['twig'] = $instance = new \Twig\Environment($a, array('paths' => array(($this->targetDirs[3].'/templates') => NULL), 'debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception::showAction', 'form_themes' => $this->parameters['twig.form.resources'], 'autoescape' => 'name', 'cache' => ($this->targetDirs[0].'/twig'), 'charset' => 'UTF-8', 'default_path' => ($this->targetDirs[3].'/templates'), 'date' => array('format' => 'F j, Y H:i', 'interval_format' => '%d days', 'timezone' => NULL), 'number_format' => array('decimals' => 0, 'decimal_point' => '.', 'thousands_separator' => ',')));
+
+        $b = ($this->services['request_stack'] ?? $this->services['request_stack'] = new \Symfony\Component\HttpFoundation\RequestStack());
+
+        $c = new \Symfony\Bridge\Twig\AppVariable();
+        $c->setEnvironment('dev');
+        $c->setDebug(true);
+        if ($this->has('request_stack')) {
+            $c->setRequestStack($b);
+        }
+
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\ProfilerExtension(new \Twig\Profiler\Profile(), NULL));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension(NULL));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\CodeExtension(($this->privates['debug.file_link_formatter'] ?? $this->privates['debug.file_link_formatter'] = new \Symfony\Component\HttpKernel\Debug\FileLinkFormatter(NULL)), ($this->targetDirs[3].'/src'), 'UTF-8'));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension(($this->services['router'] ?? $this->getRouterService())));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\YamlExtension());
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension());
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpFoundationExtension($b, ($this->privates['router.request_context'] ?? $this->getRouter_RequestContextService())));
+        $instance->addExtension(new \Twig\Extension\DebugExtension());
+        $instance->addGlobal('app', $c);
+        $instance->addRuntimeLoader(new \Twig\RuntimeLoader\ContainerRuntimeLoader(new \Symfony\Component\DependencyInjection\ServiceLocator(array('Symfony\\Bridge\\Twig\\Extension\\HttpKernelRuntime' => function () {
+            return ($this->privates['twig.runtime.httpkernel'] ?? $this->load('getTwig_Runtime_HttpkernelService.php'));
+        }))));
+        (new \Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator('F j, Y H:i', '%d days', NULL, 0, '.', ','))->configure($instance);
 
         return $instance;
     }
@@ -313,7 +391,7 @@ class srcDevDebugProjectContainer extends Container
      */
     protected function getDebug_DebugHandlersListenerService()
     {
-        return $this->privates['debug.debug_handlers_listener'] = new \Symfony\Component\HttpKernel\EventListener\DebugHandlersListener(NULL, ($this->privates['logger'] ?? $this->privates['logger'] = new \Symfony\Component\HttpKernel\Log\Logger()), NULL, -1, true, new \Symfony\Component\HttpKernel\Debug\FileLinkFormatter(NULL), true);
+        return $this->privates['debug.debug_handlers_listener'] = new \Symfony\Component\HttpKernel\EventListener\DebugHandlersListener(NULL, ($this->privates['logger'] ?? $this->privates['logger'] = new \Symfony\Component\HttpKernel\Log\Logger()), NULL, -1, true, ($this->privates['debug.file_link_formatter'] ?? $this->privates['debug.file_link_formatter'] = new \Symfony\Component\HttpKernel\Debug\FileLinkFormatter(NULL)), true);
     }
 
     /**
@@ -391,6 +469,16 @@ class srcDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the private 'sensio_framework_extra.view.listener' shared service.
+     *
+     * @return \Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener
+     */
+    protected function getSensioFrameworkExtra_View_ListenerService()
+    {
+        return $this->privates['sensio_framework_extra.view.listener'] = new \Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener(new \Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser(($this->services['kernel'] ?? $this->get('kernel'))), ($this->services['twig'] ?? $this->getTwigService()));
+    }
+
+    /**
      * Gets the private 'session_listener' shared service.
      *
      * @return \Symfony\Component\HttpKernel\EventListener\SessionListener
@@ -461,6 +549,7 @@ class srcDevDebugProjectContainer extends Container
         'kernel.secret' => false,
         'session.save_path' => false,
         'debug.container.dump' => false,
+        'twig.default_path' => false,
     );
     private $dynamicParameters = array();
 
@@ -493,10 +582,15 @@ class srcDevDebugProjectContainer extends Container
                     'path' => ($this->targetDirs[3].'/vendor/sensio/framework-extra-bundle'),
                     'namespace' => 'Sensio\\Bundle\\FrameworkExtraBundle',
                 ),
+                'TwigBundle' => array(
+                    'path' => ($this->targetDirs[3].'/vendor/symfony/twig-bundle'),
+                    'namespace' => 'Symfony\\Bundle\\TwigBundle',
+                ),
             ); break;
             case 'kernel.secret': $value = $this->getEnv('APP_SECRET'); break;
             case 'session.save_path': $value = ($this->targetDirs[0].'/sessions'); break;
             case 'debug.container.dump': $value = ($this->targetDirs[0].'/srcDevDebugProjectContainer.xml'); break;
+            case 'twig.default_path': $value = ($this->targetDirs[3].'/templates'); break;
             default: throw new InvalidArgumentException(sprintf('The dynamic parameter "%s" must be defined.', $name));
         }
         $this->loadedDynamicParameters[$name] = true;
@@ -519,6 +613,7 @@ class srcDevDebugProjectContainer extends Container
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
                 'WebServerBundle' => 'Symfony\\Bundle\\WebServerBundle\\WebServerBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
+                'TwigBundle' => 'Symfony\\Bundle\\TwigBundle\\TwigBundle',
             ),
             'kernel.charset' => 'UTF-8',
             'kernel.container_class' => 'srcDevDebugProjectContainer',
@@ -551,6 +646,10 @@ class srcDevDebugProjectContainer extends Container
             'router.cache_class_prefix' => 'srcDevDebugProjectContainer',
             'request_listener.http_port' => 80,
             'request_listener.https_port' => 443,
+            'twig.exception_listener.controller' => 'twig.controller.exception::showAction',
+            'twig.form.resources' => array(
+                0 => 'form_div_layout.html.twig',
+            ),
             'console.command.ids' => array(
 
             ),
