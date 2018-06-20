@@ -64,7 +64,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         switch ($pathinfo) {
             default:
                 $routes = array(
-                    '/' => array(array('_route' => 'index', '_controller' => 'App\\Controller\\ArticleController::homepage'), null, null, null),
+                    '/' => array(array('_route' => 'app_article_homepage', '_controller' => 'App\\Controller\\ArticleController::homepage'), null, null, null),
                 );
 
                 if (!isset($routes[$pathinfo])) {
@@ -87,6 +87,51 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $ret;
         }
 
+        $matchedPathinfo = $pathinfo;
+        $regexList = array(
+            0 => '{^(?'
+                    .'|/news/([^/]++)(*:21)'
+                .')$}sD',
+        );
+
+        foreach ($regexList as $offset => $regex) {
+            while (preg_match($regex, $matchedPathinfo, $matches)) {
+                switch ($m = (int) $matches['MARK']) {
+                    default:
+                        $routes = array(
+                            21 => array(array('_route' => 'app_article_show', '_controller' => 'App\\Controller\\ArticleController::show'), array('smash'), null, null),
+                        );
+
+                        list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
+
+                        foreach ($vars as $i => $v) {
+                            if (isset($matches[1 + $i])) {
+                                $ret[$v] = $matches[1 + $i];
+                            }
+                        }
+
+                        $hasRequiredScheme = !$requiredSchemes || isset($requiredSchemes[$context->getScheme()]);
+                        if ($requiredMethods && !isset($requiredMethods[$canonicalMethod]) && !isset($requiredMethods[$requestMethod])) {
+                            if ($hasRequiredScheme) {
+                                $allow += $requiredMethods;
+                            }
+                            break;
+                        }
+                        if (!$hasRequiredScheme) {
+                            $allowSchemes += $requiredSchemes;
+                            break;
+                        }
+
+                        return $ret;
+                }
+
+                if (21 === $m) {
+                    break;
+                }
+                $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));
+                $offset += strlen($m);
+            }
+        }
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }
