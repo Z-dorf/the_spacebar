@@ -33,13 +33,15 @@ class ArticleController extends AbstractController
             "Waaaaah ?! Where's Waluigi ?!",
         ];
 
+        dump($smash, $this);
+
         return $this->render('article/show.html.twig', [
             'title' =>ucwords(str_replace('-', ' ', $smash)),
             'comments' => $comments,
         ]);
         }
 
-
+        
     // public function show($smash)
     // {
     //     return new Response(sprintf(
