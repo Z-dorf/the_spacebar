@@ -3,9 +3,10 @@
 namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
     /**
      * @Route("/")
@@ -21,13 +22,29 @@ class ArticleController
      * @Route("/news/{smash}")
      */
     // print ce qu'il y a dans l'url sera utile par exemple pour récuperer une ID util
-    
+
+
     public function show($smash)
     {
-        return new Response(sprintf(
-            'Next smash incoming soon! %s',
-            $smash
-        ));
+
+        $comments = [
+            'This game is the best smash ever !',
+            "Yay ! Ridley wasn't too big '!",
+            "Waaaaah ?! Where's Waluigi ?!",
+        ];
+
+        return $this->render('article/show.html.twig', [
+            'title' =>ucwords(str_replace('-', ' ', $smash)),
+            'comments' => $comments,
+        ]);
+        }
+
+
+    // public function show($smash)
+    // {
+    //     return new Response(sprintf(
+    //         'Next smash incoming soon! %s',
+    //         $smash
+    //     ));
     }
 
-}

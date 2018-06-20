@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %} {% block title %}{{ title }}{% endblock %} {% block body %}
+<h1>{{ title }}</h1>
+
+<div>
+
+    <p>
+        lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+    </p>
+
+    <p>
+        This is content about stuff and omg net Smash is coming out in December !
+    </p>
+
+    <p>
+        Please December, come here quicker !
+    </p>
+
+    <p>
+        Today's Item Assist Trophy: Bomberman Bomberman is a brand new Assist Trophy, which means he's here to help you during battle.
+        The bombs he leaves on the stage detonate in his iconic, cross-shaped pattern!
+    </p>
+
+</div>
+<h2> Comments ({{ comments|length}}) </h2> <!-- Ca vas print le nombre de commentaires, woohoo! !-->
+
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
