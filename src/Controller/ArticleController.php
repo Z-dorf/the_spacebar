@@ -33,7 +33,7 @@ class ArticleController extends AbstractController
             "Waaaaah ?! Where's Waluigi ?!",
         ];
 
-        dump($smash, $this);
+        // dump($smash, $this); marche aussi dans le twig, le debug le rend plus ergo à regarder
 
         return $this->render('article/show.html.twig', [
             'title' =>ucwords(str_replace('-', ' ', $smash)),
@@ -41,7 +41,7 @@ class ArticleController extends AbstractController
         ]);
         }
 
-        
+
     // public function show($smash)
     // {
     //     return new Response(sprintf(
