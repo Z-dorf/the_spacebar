@@ -91,6 +91,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         $regexList = array(
             0 => '{^(?'
                     .'|/news/([^/]++)(*:21)'
+                    .'|/_error/(\\d+)(?:\\.([^/]++))?(*:56)'
                 .')$}sD',
         );
 
@@ -100,6 +101,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     default:
                         $routes = array(
                             21 => array(array('_route' => 'app_article_show', '_controller' => 'App\\Controller\\ArticleController::show'), array('smash'), null, null),
+                            56 => array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null),
                         );
 
                         list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
@@ -125,7 +127,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $ret;
                 }
 
-                if (21 === $m) {
+                if (56 === $m) {
                     break;
                 }
                 $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));

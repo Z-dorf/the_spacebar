@@ -22,6 +22,7 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
             self::$declaredRoutes = array(
         'app_article_homepage' => array(array(), array('_controller' => 'App\\Controller\\ArticleController::homepage'), array(), array(array('text', '/')), array(), array()),
         'app_article_show' => array(array('smash'), array('_controller' => 'App\\Controller\\ArticleController::show'), array(), array(array('variable', '/', '[^/]++', 'smash'), array('text', '/news')), array(), array()),
+        '_twig_error_test' => array(array('code', '_format'), array('_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code' => '\\d+'), array(array('variable', '.', '[^/]++', '_format'), array('variable', '/', '\\d+', 'code'), array('text', '/_error')), array(), array()),
     );
         }
     }
