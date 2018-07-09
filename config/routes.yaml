@@ -1,4 +1,4 @@
-# En gros, quand un utilisateur arrive sur la page d'accueil, symfony appelle mon ArticleController avec la métyhode homepage
+# En gros, quand un utilisateur arrive sur la page d'accueil, symfony appelle mon ArticleController avec la méthode homepage
 # Ca s'appelle route hehe
 
 
