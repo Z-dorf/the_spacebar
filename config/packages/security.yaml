@@ -1,14 +1,22 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    hide_user_not_found: false
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+            cost : 13
     providers:
-        in_memory: { memory: ~ }
+        # in_memory: { memory: ~ }
+        database_users:
+            entity: { class: App\Entity\User, property: username }
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: true
-
+            pattern: ^/
+           
             # activate different ways to authenticate
 
             # http_basic: true
@@ -20,5 +28,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/profile, roles: ROLE_USER }
