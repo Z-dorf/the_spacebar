@@ -99,3 +99,6 @@ dd0752,127.0.0.1,GET,http://localhost:8000/contact/,1531315688,4851b4,200
 73d223,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531315734,,200
 038d95,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531315734,ea8076,200
 ea8076,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531315734,,404
+9860d4,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531316750,,200
+143d55,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531316751,363c45,200
+363c45,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531316751,,404
