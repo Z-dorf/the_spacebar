@@ -7,3 +7,10 @@ cd854a,127.0.0.1,GET,http://localhost:8000/news/test,1529502581,,200
 68fe66,127.0.0.1,GET,http://localhost:8000/news/Smesh,1529502585,,200
 03c0e5,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1529502585,9835a3,200
 9835a3,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1529502585,,404
+9a95e1,127.0.0.1,GET,http://localhost:8000/,1531309312,,200
+3593fc,127.0.0.1,GET,http://localhost:8000/,1531309314,,200
+d1773d,127.0.0.1,GET,http://localhost:8000/,1531309359,,200
+676018,127.0.0.1,GET,http://localhost:8000/,1531310173,,200
+476cb8,127.0.0.1,GET,http://localhost:8000/news,1531310177,b16cb0,200
+b16cb0,127.0.0.1,GET,http://localhost:8000/news,1531310177,,404
+0563d7,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531310182,,200
