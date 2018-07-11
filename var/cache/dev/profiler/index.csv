@@ -78,3 +78,6 @@ b10d70,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531315238,,500
 f7c99d,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531315246,,200
 67aa36,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531315246,dc164d,200
 dc164d,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531315246,,404
+36ac02,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531315388,,200
+b737da,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531315388,33f893,200
+33f893,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531315388,,404
