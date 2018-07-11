@@ -117,7 +117,7 @@ class __TwigTemplate_dd372c9d230818e4c0e7ad2ba3fd7818452e8cbefc6e591ccfecd950f0c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome to the SpaceBar";
+        echo "Welcome to the SmashBar";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -204,7 +204,7 @@ class __TwigTemplate_dd372c9d230818e4c0e7ad2ba3fd7818452e8cbefc6e591ccfecd950f0c
 <html lang=\"en\">
 
     <head>
-        <title>{% block title %}Welcome to the SpaceBar{% endblock %}</title>
+        <title>{% block title %}Welcome to the SmashBar{% endblock %}</title>
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
 
