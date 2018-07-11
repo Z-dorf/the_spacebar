@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerDIiLZqm;
+namespace ContainerLsTIBhD;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -61,6 +61,7 @@ class srcDevDebugProjectContainer extends Container
         );
         $this->fileMap = array(
             'App\\Controller\\ArticleController' => 'getArticleControllerService.php',
+            'App\\Controller\\UserController' => 'getUserControllerService.php',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController' => 'getRedirectControllerService.php',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController' => 'getTemplateControllerService.php',
             'cache.app_clearer' => 'getCache_AppClearerService.php',
@@ -1270,6 +1271,10 @@ class srcDevDebugProjectContainer extends Container
                     'path' => ($this->targetDirs[3].'/vendor/symfony/security-bundle'),
                     'namespace' => 'Symfony\\Bundle\\SecurityBundle',
                 ),
+                'DoctrineFixturesBundle' => array(
+                    'path' => ($this->targetDirs[3].'/vendor/doctrine/doctrine-fixtures-bundle'),
+                    'namespace' => 'Doctrine\\Bundle\\FixturesBundle',
+                ),
             ); break;
             case 'kernel.secret': $value = $this->getEnv('APP_SECRET'); break;
             case 'session.save_path': $value = ($this->targetDirs[0].'/sessions'); break;
@@ -1309,6 +1314,7 @@ class srcDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'DoctrineMigrationsBundle' => 'Doctrine\\Bundle\\MigrationsBundle\\DoctrineMigrationsBundle',
                 'SecurityBundle' => 'Symfony\\Bundle\\SecurityBundle\\SecurityBundle',
+                'DoctrineFixturesBundle' => 'Doctrine\\Bundle\\FixturesBundle\\DoctrineFixturesBundle',
             ),
             'kernel.charset' => 'UTF-8',
             'kernel.container_class' => 'srcDevDebugProjectContainer',
