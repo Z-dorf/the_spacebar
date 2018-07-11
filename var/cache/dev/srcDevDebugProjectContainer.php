@@ -16,6 +16,6 @@ if (!\class_exists(srcDevDebugProjectContainer::class, false)) {
 
 return new \ContainerIN8SLMk\srcDevDebugProjectContainer(array(
     'container.build_hash' => 'IN8SLMk',
-    'container.build_id' => '85b7f144',
-    'container.build_time' => 1531318797,
+    'container.build_id' => '6550a88e',
+    'container.build_time' => 1531319739,
 ), __DIR__.\DIRECTORY_SEPARATOR.'ContainerIN8SLMk');
