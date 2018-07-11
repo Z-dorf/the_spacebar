@@ -97,20 +97,24 @@ class __TwigTemplate_2df3727951db89276b5f72458c29f4f07f15f096ee62554c15a6b36c7d4
         The bombs he leaves on the stage detonate in his iconic, cross-shaped pattern!
     </p>
 
+    <p>
+        Unfortunately, Crystal won't be part of the fighter cast of Smash Ultimate (same as Waluigi ?), she has been confirmed to be an TA.
+        But Sakurai is a mad man, who knows maybe this will change !
+    </p>
 </div>
 
 <h2> Comments (";
-        // line 33
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 33, $this->source); })())), "html", null, true);
+        // line 37
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 37, $this->source); })())), "html", null, true);
         echo ") </h2> <!-- Ca vas print le nombre de commentaires, woohoo! !-->
 
 <ul>
     ";
-        // line 36
+        // line 40
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 36, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new Twig_Error_Runtime('Variable "comments" does not exist.', 40, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-            // line 37
+            // line 41
             echo "        <li>";
             echo twig_escape_filter($this->env, $context["comment"], "html", null, true);
             echo "</li>
@@ -119,7 +123,7 @@ class __TwigTemplate_2df3727951db89276b5f72458c29f4f07f15f096ee62554c15a6b36c7d4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 43
         echo "</ul>
 
 ";
@@ -143,7 +147,7 @@ class __TwigTemplate_2df3727951db89276b5f72458c29f4f07f15f096ee62554c15a6b36c7d4
 
     public function getDebugInfo()
     {
-        return array (  123 => 39,  114 => 37,  110 => 36,  104 => 33,  78 => 10,  74 => 8,  65 => 7,  45 => 4,  15 => 1,);
+        return array (  127 => 43,  118 => 41,  114 => 40,  108 => 37,  78 => 10,  74 => 8,  65 => 7,  45 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -178,6 +182,10 @@ class __TwigTemplate_2df3727951db89276b5f72458c29f4f07f15f096ee62554c15a6b36c7d4
         The bombs he leaves on the stage detonate in his iconic, cross-shaped pattern!
     </p>
 
+    <p>
+        Unfortunately, Crystal won't be part of the fighter cast of Smash Ultimate (same as Waluigi ?), she has been confirmed to be an TA.
+        But Sakurai is a mad man, who knows maybe this will change !
+    </p>
 </div>
 
 <h2> Comments ({{ comments|length}}) </h2> <!-- Ca vas print le nombre de commentaires, woohoo! !-->

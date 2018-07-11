@@ -31,6 +31,8 @@ class ArticleController extends AbstractController
             'This game is the best smash ever !',
             "Yay ! Ridley wasn't too big '!",
             "Waaaaah ?! Where's Waluigi ?!",
+            "Hey, i've heard that Dark Samus might be in the game !",
+            "Sakurai, please bring back Golden Sun's franchise in this game..."
         ];
 
         // dump($smash, $this); marche aussi dans le twig, le debug le rend plus ergo à regarder

@@ -14,3 +14,16 @@ d1773d,127.0.0.1,GET,http://localhost:8000/,1531309359,,200
 476cb8,127.0.0.1,GET,http://localhost:8000/news,1531310177,b16cb0,200
 b16cb0,127.0.0.1,GET,http://localhost:8000/news,1531310177,,404
 0563d7,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531310182,,200
+4349e6,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531310723,,200
+a780e0,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531312520,,200
+2c0d4c,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312520,aa3301,200
+aa3301,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312520,,404
+fc1bf7,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531312644,,200
+2d84d6,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312644,3a10d3,200
+3a10d3,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312644,,404
+9b8dab,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531312649,,200
+976b5e,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312649,70096f,200
+70096f,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312649,,404
+179e84,127.0.0.1,GET,http://localhost:8000/news/Smesh,1531312654,,200
+2d39ac,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312655,922672,200
+922672,127.0.0.1,GET,http://localhost:8000/news/images/astronaut-profile.png,1531312655,,404
