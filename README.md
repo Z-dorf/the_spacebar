@@ -6,4 +6,4 @@ Start up command (alias) :
 
 - betterserver (composer require server)
 
-- serverun (./bin/console server:run)
+- serverun (pĥp ./bin/console server:run)
